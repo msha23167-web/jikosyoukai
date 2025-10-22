@@ -1,0 +1,199 @@
+/*================================================
+  全体設定 (リセットとフォント)
+================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォントを使用 */
+    line-height: 1.7; /* 読みやすい行の高さ */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* ごく薄いグレーの背景 */
+    color: #343a40; /* 濃い文字色 */
+    scroll-behavior: smooth;
+}
+
+/*================================================
+  ヘッダー (ヒーローセクション)
+================================================*/
+header {
+    background-color: #007bff; /* メインカラー（鮮やかな青） */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border-bottom-left-radius: 15px; /* 下側の角を少し丸く */
+    border-bottom-right-radius: 15px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700; /* 太字 */
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/*================================================
+  メインコンテンツとセクション
+================================================*/
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* はっきりした影 */
+    transition: transform 0.3s ease;
+}
+
+/* ホバーエフェクトを追加 */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+    color: #007bff; /* メインカラーと同じ青 */
+    font-size: 2em;
+    border-left: 5px solid #007bff; /* 左側のアクセントライン */
+    padding-left: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/*================================================
+  プロフィールセクション
+================================================*/
+.profile .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile p {
+    border-bottom: 1px dashed #e9ecef;
+    padding: 8px 0;
+    margin: 0;
+    display: flex;
+}
+
+.profile strong {
+    min-width: 140px; /* 見出し部分の幅を確保 */
+    color: #495057;
+    font-weight: 700;
+}
+
+/*================================================
+  趣味・関心事セクション
+================================================*/
+.hobbies ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid; /* グリッドレイアウトで並べる */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.hobbies li {
+    background: #e9f5ff; /* 薄い水色の背景 */
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+/* リストアイテムにアイコン風の装飾を追加 */
+.hobbies li::before {
+    content: "🚀"; /* ロケットの絵文字 */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.hobbies li:nth-child(2)::before {
+    content: "🧠"; /* 脳の絵文字など、2番目以降で変えても良い */
+}
+
+.hobbies li:nth-child(3)::before {
+    content: "🏞️";
+}
+
+.hobbies li:nth-child(4)::before {
+    content: "🐍";
+}
+
+
+/*================================================
+  メッセージセクション
+================================================*/
+.message p {
+    background-color: #fff3cd; /* 目立たせるための薄い黄色 */
+    color: #856404; /* 濃いめの文字色 */
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+
+/*================================================
+  フッター
+================================================*/
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #343a40; /* 濃いグレー */
+    color: #adb5bd; /* 薄い文字色 */
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/*================================================
+  レスポンシブデザイン (スマホ対応)
+================================================*/
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    /* スマホではグリッドを1列にする */
+    .hobbies ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*================================================
+  アクセシビリティ・デザイン調整
+================================================*/
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
